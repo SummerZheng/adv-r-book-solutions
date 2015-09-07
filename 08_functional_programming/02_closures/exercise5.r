@@ -1,7 +1,10 @@
 ### Create a function that creates functions that compute the ith central moment <http://en.wikipedia.org/wiki/Central_moment> of a numeric vector. You can test it by running the following code.
 
-moment <- function(vec, i) {
-#TODO: Hadley expects too much math.
+moment <- function(exponent) {
+  function(x){
+    x0 <- mean(x)
+    mean((x-x0)^exponent)
+  }
 }
 
 m1 <- moment(1)
